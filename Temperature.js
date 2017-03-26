@@ -179,3 +179,46 @@ class Farenheit extends Temperatura {
     return this.resultado;
   }
 }
+
+function calculate() {
+  let temp = original.value;
+  let type = Medida.type(temp);
+  //let type = Temperatura.type(temp);
+  let calculadora;
+  if(type == 1){
+    type = Temperatura.type(temp);
+    if(type == 1) {
+      calculadora = new Celsius(temp);
+    }
+    else {
+      if(type == 2) {
+        calculadora = new Farenheit(temp);
+      }
+      else {
+        if(type == 3) {
+          calculadora = new Kelvin(temp);
+        }
+        else {
+          converted.innerHTML = "ERROR! Introduce algo como '-30C to K' o '30m p'(las longitudes siempre positivas)";
+        }
+      }
+    }
+  }
+  else{
+    type = Longitud.type(temp);
+    if(type == 1) {
+      calculadora = new Metro(temp);
+    }
+    else {
+      if(type == 2) {
+        calculadora = new Pulgada(temp);
+      }
+    }
+  }
+  if(calculadora) {
+    converted.innerHTML = calculadora.convertir();
+  }
+  else {
+    converted.innerHTML = "ERROR! Introduce algo como '-30C to K' o '30m p'(las longitudes siempre positivas)";
+  }
+}
