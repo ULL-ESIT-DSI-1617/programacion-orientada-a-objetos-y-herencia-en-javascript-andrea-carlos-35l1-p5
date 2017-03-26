@@ -34,6 +34,45 @@ class Medida {
   get getCover() { return this.cover }
 }
 
+class Metro extends Longitud {
+  constructor(temp){
+    if(Longitud.type(temp) == 1){
+      super(temp);
+    }
+  }
+
+  convertir() {
+    this.resultado = 0;
+    if(super.getCover.match(/[Mm]/)){
+      this.resultado = super.getValor;
+    }
+    else{
+      this.resultado = super.getValor/0.0254;
+    }
+    return this.resultado;
+  }
+}
+
+class Pulgada extends Longitud {
+  constructor(temp){
+    if(Longitud.type(temp) == 2){
+      super(temp);
+    }
+  }
+
+  convertir() {
+    this.resultado = 0;
+    if(super.getCover.match(/[Pp]/)){
+      this.resultado = super.getValor;
+    }
+    else{
+      this.resultado = super.getValor*0.0254;
+    }
+    return this.resultado;
+  }
+}
+
+
 class Temperatura extends Medida {
   constructor(temp){
     var array = temp.match(/([-+]?\d+(?:\.\d+)?)\s*([FfCcKk])\s*(?:to)?\s*([FfCcKk])\s*$/);
