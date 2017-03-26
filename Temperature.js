@@ -22,11 +22,39 @@ class Temperatura extends Medida {
       console.log("Expresión inválida.")
     }
   }
+  static type(temp){
+    var array = temp.match(/([-+]?\d+(?:\.\d+)?)\s*([FfCcKk])\s*(?:to)?\s*([FfCcKk])\s*$/);
+    var typ = 0;
+    if(array != null){
+      if(array[2].match(/[FfCcKk]/) && array[3].match(/[FfCcKk]/)) {
+        if(array[2].match(/[Cc]/)) {
+          typ = 1;
+        }
+        else {
+          if(array[2].match(/[Ff]/)) {
+            typ = 2;
+          }
+          else {
+            typ = 3;
+          }
+        }
+      }
+      else {
+        console.log("Expresión inválida.")
+      }
+    }
+    else{
+      console.log("Expresión inválida.")
+    }
+    return typ;
+  }
 }
 
 class Kelvin extends Temperatura {
   constructor(temp){
+    if(Temperatura.type(temp) == 3){
       super(temp);
+    }
   }
 
   convertir() {
@@ -47,7 +75,9 @@ class Kelvin extends Temperatura {
 
 class Celsius extends Temperatura {
   constructor(temp){
+    if(Temperatura.type(temp) == 1){
       super(temp);
+    }
   }
 
   convertir() {
@@ -69,7 +99,9 @@ class Celsius extends Temperatura {
 
 class Farenheit extends Temperatura {
   constructor(temp){
+    if(Temperatura.type(temp) == 2){
       super(temp);
+    }
   }
 
   convertir(){
