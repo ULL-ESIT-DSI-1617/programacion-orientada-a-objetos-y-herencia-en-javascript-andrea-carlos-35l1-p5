@@ -66,3 +66,24 @@ class Celsius extends Temperatura {
     return this.resultado;
   }
 }
+
+class Farenheit extends Temperatura {
+  constructor(temp){
+      super(temp);
+  }
+
+  convertir(){
+    if(super.getCover.match(/[Cc]/)){
+      this.resultado = (super.getValor-32) * (5/9);
+    }
+    else{
+      if(super.getCover.match(/[Ff]/)){
+        this.resultado = super.getValor;
+      }
+      else{
+        this.resultado = ((super.getValor-32) * (5/9)) + 273.15;
+      }
+    }
+    return this.resultado;
+  }
+}
