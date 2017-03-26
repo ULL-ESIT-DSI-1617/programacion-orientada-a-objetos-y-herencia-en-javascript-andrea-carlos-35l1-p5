@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <title>JavaScript Temperature Converter</title>
+     <link href="normalize.css" rel="stylesheet" type="text/css">
+     <link href="global.css" rel="stylesheet" type="text/css">
+
+     <script type="text/javascript" src="Temperature.js"></script>
+  </head>
+  <body>
+    <h1>Calculadora</h1>
+    <table>
+      <tr>
+        <th>Introducir valores (ejemplos: 32F to C, 45C k, 2m to p)</th>
+        <td><input id="original" autofocus onchange="calculate();" placeholder="32F" size="50"></td>
+      </tr>
+      <tr>
+        <th>Resultado: </th>
+        <td><span class="output" id="converted"></span></td>
+      </tr>
+    </table>
+  </body>
+</html>
