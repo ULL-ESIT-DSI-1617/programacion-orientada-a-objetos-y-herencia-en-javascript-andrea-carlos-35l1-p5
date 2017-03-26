@@ -7,16 +7,16 @@ gulp.task('build', shell.task(
 ));
 
 gulp.task('deploy', function() {
-return gulp.src('./html/**/*')
+return gulp.src('./conversor/*')
 .pipe(ghPages());
 });
 
 gulp.task('deploypush', ['deploy'], function() {
-  return gulp.src('./html/**/*')
+  return gulp.src('./conversor/*')
   .pipe(ghPages(['git@github.com:ULL-ESIT-DSI-1617/estudiar-las-rutas-en-expressjs-andrea-carlos-35l1.git']))
 })
 
-gulp.task('deploygb', shell.task([
+/*gulp.task('deploygb', shell.task([
     //'cd ..'+
    // ';'+
     'cd docs'+
@@ -26,7 +26,7 @@ gulp.task('deploygb', shell.task([
     'git commit -m "Actualizando gitbook"'+
     ';'+
     'git push https://git.gitbook.com/alu0100819847/carlos-andrea-3.git master'
-]));
+]));*/
     
 gulp.task('serve', shell.task(
   //'cd ..'+
