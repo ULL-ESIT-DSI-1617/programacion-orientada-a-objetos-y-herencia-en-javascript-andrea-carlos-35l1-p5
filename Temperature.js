@@ -34,6 +34,41 @@ class Medida {
   get getCover() { return this.cover }
 }
 
+class Longitud extends Medida {
+  constructor(temp){
+    var array = temp.match(/^\s*(\+?\d+(?:\.\d+)?)\s*([MmPp])\s*(?:to)?\s*([MmPp])\s*$/);
+
+    if(array[2].match(/[MmPp]/) && array[3].match(/[MmPp]/)){
+      super(temp)
+    }
+    else {
+      console.log("Expresión inválida.")
+    }
+  }
+
+  static type(temp){
+    var array = temp.match(/^\s*(\+?\d+(?:\.\d+)?)\s*([MmPp])\s*(?:to)?\s*([MmPp])\s*$/);
+    var typ = 0;
+    if(array != null){
+      if(array[2].match(/[MmPp]/) && array[3].match(/[MmPp]/)) {
+        if(array[2].match(/[Mm]/)) {
+          typ = 1;
+        }
+        else {
+          typ = 2;
+        }
+      }
+      else {
+        console.log("Expresión inválida.")
+      }
+    }
+    else{
+      console.log("Expresión inválida.")
+    }
+    return typ;
+  }
+}
+
 class Metro extends Longitud {
   constructor(temp){
     if(Longitud.type(temp) == 1){
@@ -221,4 +256,5 @@ function calculate() {
   else {
     converted.innerHTML = "ERROR! Introduce algo como '-30C to K' o '30m p'(las longitudes siempre positivas)";
   }
+
 }
