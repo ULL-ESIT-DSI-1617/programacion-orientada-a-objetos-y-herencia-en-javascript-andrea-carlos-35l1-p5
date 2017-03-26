@@ -1,0 +1,40 @@
+{
+  "name": "sessions-y-autenticacion-en-expressjs-andrea-carlos-35l1-p5",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "7.6.0"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-andrea-carlos-35l1-p5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-andrea-carlos-35l1-p5/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-andrea-carlos-35l1-p5#readme",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-shell": "^0.6.3",
+    "jsonfile": "^2.4.0"
+  }
+}
