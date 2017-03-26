@@ -7,6 +7,9 @@ class Medida {
     if(array[2]){ this.tipo = array[2]; }
     if(array[3]){ this.cover = array[3]; }
   }
+  get getValor() { return this.valor }
+  get getTipo() { return this.tipo }
+  get getCover() { return this.cover }
 }
 
 class Temperatura extends Medida {
@@ -18,5 +21,26 @@ class Temperatura extends Medida {
     else {
       console.log("Expresión inválida.")
     }
+  }
+}
+
+class Kelvin extends Temperatura {
+  constructor(temp){
+      super(temp);
+  }
+
+  convertir() {
+    if(super.getCover.match(/[Cc]/)){
+      this.resultado = super.getValor - 273.15;
+    }
+    else{
+      if(super.getCover.match(/[Ff]/)){
+        this.resultado = ((super.getValor - 273.15) * (9/5))+32;
+      }
+      else{
+        this.resultado = super.getValor;
+      }
+    }
+    return this.resultado
   }
 }
