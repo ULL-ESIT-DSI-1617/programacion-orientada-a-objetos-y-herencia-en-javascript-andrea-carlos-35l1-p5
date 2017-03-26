@@ -3,7 +3,7 @@ var shell = require('gulp-shell');
 var ghPages = require('gulp-gh-pages');
 
 gulp.task('build', shell.task(
-'gitbook build docs html'
+'gitbook build docs public'
 ));
 
 gulp.task('deploy', function() {
@@ -30,5 +30,5 @@ gulp.task('deploypush', ['deploy'], function() {
     
 gulp.task('serve', shell.task(
   //'cd ..'+
-  'gitbook serve docs html'
+  'gitbook serve docs public'
 ));

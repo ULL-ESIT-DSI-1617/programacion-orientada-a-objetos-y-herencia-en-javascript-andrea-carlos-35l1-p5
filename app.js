@@ -96,7 +96,7 @@ app.post('/login', function(req, res){
     res.render('noautentificado', { message: 'Sesion cerrada correctamente.' } );
   });
 
-app.use('/content',auth, express.static(path.join(__dirname, 'html')));
+app.use('/content',auth, express.static(path.join(__dirname, 'public')));
 
   var server = app.listen(process.env.PORT || 8087, ()=> {
 	var host = server.address().address
