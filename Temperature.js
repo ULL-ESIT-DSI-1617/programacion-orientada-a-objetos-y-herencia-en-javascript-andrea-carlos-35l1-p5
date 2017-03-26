@@ -140,7 +140,6 @@ class Celsius extends Temperatura {
       super(temp);
     }
   }
-
   convertir() {
     this.resultado = 0;
     if(super.getCover.match(/[Cc]/)){
